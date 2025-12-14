@@ -3,7 +3,7 @@ import myIcon from '@/public/assets/hero.png';
 
 export default function Hero(){
     return(
-        <section className="mb-20 w-full h-screen px-5 pt-20 bg-gradient-to-b from-rose-100 via-rose-50 to-white flex flex-col space-y-5">
+        <section className="mb-20 w-full min-h-screen px-5 pt-32 bg-gradient-to-b from-rose-100 via-rose-50 to-white flex flex-col space-y-5">
             <article className="md:w-3/4 mx-auto flex flex-col">
                 <div className="text-center mb-5">
                     <h1 className="text-2xl md:text-3xl tracking-wider mb-2">
@@ -23,7 +23,7 @@ export default function Hero(){
             </article>
 
             <article>
-                <Image className='w-96 mx-auto' src={myIcon} alt="Hero Image"/>
+                <Image className='w-[500px] md:w-96 mx-auto' src={myIcon} alt="Hero Image"/>
             </article>
         </section>
     );

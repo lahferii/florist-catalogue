@@ -23,13 +23,15 @@ function ProductWrapper({title, children}){
 function ProductBox({path, title, price}){
     return(
         <div className="w-80 h-96 flex-shrink-0 shadow flex flex-col rounded overflow-hidden">
-            <article className="flex-[2] bg-black"></article>
+            <article className="flex-[2] bg-black">
 
-            <article className="flex-1 relative flex flex-col px-2">
+            </article>
+
+            <article className="flex-1 relative flex flex-col px-2 bg-gradient-to-br from-white to-rose-50">
                 <div className="absolute bottom-5">
                     <h3 className="tracking-widest font-semibold">{title}</h3>
                     <p className="mb-5 text-sm text-gray-700">Rp. {price}</p>
-                    <button className="btn-primary py-1 rounded-sm">Beli</button>
+                    <button className="btn-primary py-1 rounded-sm">Pesan</button>
                 </div>
             </article>
         </div>

@@ -13,4 +13,19 @@
     .btn-secondary{
         @apply hover:shadow-xl hover:-translate-y-1 duration-300 p-2 md:px-5 md:py-1 bg-white shadow-md  tracking-wider
     }
+    .nav-bar{
+        @apply w-full h-20 px-5 md:px-16 flex items-center justify-between fixed top-0 z-10 duration-300
+    }
+    .nav-scrolled{
+        @apply bg-white bg-opacity-75 backdrop-blur-sm shadow
+    }
+    .burger{
+        @apply w-7 h-7 flex flex-col gap-2 sm:hidden
+    }
+    .menu{
+        @apply bg-white sm:bg-transparent sm:bg-opacity-0 backdrop-blur-sm sm:backdrop-blur-none gap-5 sm:items-center absolute sm:static top-24 sm:top-0 right-5 sm:right-0 flex-col sm:flex-row w-40 sm:w-auto p-5 sm:p-0 rounded sm:rounded-none shadow-xl sm:shadow-none
+    }
+    .nav-link{
+        @apply tracking-wider
+    }
 }

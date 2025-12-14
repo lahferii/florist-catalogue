@@ -2,7 +2,7 @@ import BoxFeatures from "../utils/boxFeatures"
 
 export default function Feature(){
     return(
-        <section>
+        <section className="mb-20">
             <article className="mb-5 text-center">
                 <h2 className="text-3xl tracking-wider mb-2">Mengapa Pilih  Lorem Ipsum?</h2>
                 <p>Kami berkomitmen memberikan pelayanan terbaik dengan kualitas premium</p>
