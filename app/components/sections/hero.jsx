@@ -23,7 +23,7 @@ export default function Hero(){
             </article>
 
             <article>
-                <Image className='w-[500px] md:w-96 mx-auto' src={myIcon} alt="Hero Image"/>
+                <Image className='w-[700px] md:w-96 mx-auto' src={myIcon} alt="Hero Image"/>
             </article>
         </section>
     );
