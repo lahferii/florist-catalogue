@@ -3,18 +3,27 @@ import { FooterListWrapper, FooterList } from "../utils/footerList"
 export default function Footer(){
     return(
         <footer className="w-full pb-20 bg-gradient-to-b from-white  to-rose-100 px-5 md:px-16">
-            <article className="flex flex-col text-center md:text-left md:flex-row md:justify-between mb-20 gap-10">
+            <article className="flex flex-col text-center md:text-left md:flex-row md:justify-between mb-5 gap-10">
                 <FooterListWrapper title="Lorem Florist" caption="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure qui doloribus consequuntur porro adipisci sed voluptatum nam iste, officiis non?"/>
 
                 <FooterListWrapper title="Sosial Media">
+                    <FooterList list="ABCDEFG"/>
+                    <FooterList list="ABCDEFG"/>
+                    <FooterList list="ABCDEFG"/>
                     <FooterList list="ABCDEFG"/>
                 </FooterListWrapper>
 
                 <FooterListWrapper title="Produk Kami">
                     <FooterList list="ABCDEFG"/>
+                    <FooterList list="ABCDEFG"/>
+                    <FooterList list="ABCDEFG"/>
+                    <FooterList list="ABCDEFG"/>
                 </FooterListWrapper>
 
                 <FooterListWrapper title="Alamat">
+                    <FooterList list="ABCDEFG"/>
+                    <FooterList list="ABCDEFG"/>
+                    <FooterList list="ABCDEFG"/>
                     <FooterList list="ABCDEFG"/>
                 </FooterListWrapper>
             </article>

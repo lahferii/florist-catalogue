@@ -13,7 +13,7 @@ function ProductWrapper({title, children}){
                 </div>
             </div>
 
-        <div className="w-full flex space-x-5 overflow-x-scroll py-5">
+        <div className="w-full flex space-x-5 overflow-x-auto py-5">
             {children}
         </div>
         </section>

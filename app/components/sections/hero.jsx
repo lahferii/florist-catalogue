@@ -6,7 +6,7 @@ export default function Hero(){
         <section className="mb-20 w-full min-h-screen px-5 pt-32 bg-gradient-to-b from-rose-100 via-rose-50 to-white flex flex-col space-y-5">
             <article className="md:w-3/4 mx-auto flex flex-col">
                 <div className="text-center mb-5">
-                    <h1 className="text-2xl md:text-3xl tracking-wider mb-2">
+                    <h1 className="text-3xl md:text-4xl tracking-wider mb-2 font-serif">
                         Lorem Ipsum Dolorsit
                     </h1>
                     <div className="md:w-3/4 mx-auto">
