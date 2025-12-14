@@ -63,9 +63,9 @@ export default function Header() {
       </div>
 
       <button onClick={toggleMenu} className="burger group">
-        <div className="w-full h-2 bg-gray-700 group-hover:bg-primary"></div>
-        <div className="w-full h-2 bg-gray-700 group-hover:bg-primary"></div>
-        <div className="w-full h-2 bg-gray-700 group-hover:bg-primary"></div>
+        <div className="w-full h-2 bg-gray-700 group-hover:bg-rose-500 duration-300"></div>
+        <div className="w-full h-2 bg-gray-700 group-hover:bg-rose-500 duration-300"></div>
+        <div className="w-full h-2 bg-gray-700 group-hover:bg-rose-500 duration-300"></div>
       </button>
 
       <nav ref={menuRef} className="hidden sm:flex menu">

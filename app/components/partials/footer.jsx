@@ -2,7 +2,7 @@ import { FooterListWrapper, FooterList } from "../utils/footerList"
 
 export default function Footer(){
     return(
-        <footer className="w-full pb-20 bg-gradient-to-b from-white  to-rose-100 px-16">
+        <footer className="w-full pb-20 bg-gradient-to-b from-white  to-rose-100 px-5 md:px-16">
             <article className="flex flex-col text-center md:text-left md:flex-row md:justify-between mb-20 gap-10">
                 <FooterListWrapper title="Lorem Florist" caption="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure qui doloribus consequuntur porro adipisci sed voluptatum nam iste, officiis non?"/>
 
@@ -19,7 +19,7 @@ export default function Footer(){
                 </FooterListWrapper>
             </article>
 
-            <article className="text-center">
+            <article className="w-full">
                 <h2 className="text-3xl tracking-wider mb-5">Temukan Kami!</h2>
 
                 <div className="w-full h-96">
