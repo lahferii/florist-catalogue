@@ -1,53 +1,39 @@
 'use client'
 
-import { useRef, useState, useEffect } from 'react'
-
-export { ProductWrapper, ProductBox, MoreBox }
+import { useEffect, useState, useRef } from 'react'
 
 function ProductWrapper({ title, children }) {
   const ref = useRef(null)
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
-  const [isDesktop, setIsDesktop] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setIsDesktop(window.matchMedia('(pointer: fine)').matches)
+    setMounted(true)
   }, [])
 
-  const onMouseDown = (e) => {
-    if (!isDesktop || !ref.current) return
-    setIsDown(true)
-    setStartX(e.pageX - ref.current.offsetLeft)
-    setScrollLeft(ref.current.scrollLeft)
-  }
-
-  const onMouseMove = (e) => {
-    if (!isDown || !ref.current) return
-    e.preventDefault()
-    const x = e.pageX - ref.current.offsetLeft
-    ref.current.scrollLeft = scrollLeft - (x - startX) * 1.5
-  }
-
-  const stopDrag = () => setIsDown(false)
+  if (!mounted) return null // ⬅️ SSR & first render sama
 
   return (
-    <section className="mb-10">
-      <div className="mb-2 flex justify-between">
-        <h2 className="text-2xl tracking-wider">{title}</h2>
-      </div>
+    <section className="mb-10 cursor-pointer">
+      <h2 className="text-2xl tracking-wider mb-2">{title}</h2>
 
       <div
         ref={ref}
-        className="
-          w-full flex space-x-5 py-5
-          overflow-x-auto select-none
-          cursor-grab active:cursor-grabbing
-        "
-        onMouseDown={onMouseDown}
-        onMouseMove={onMouseMove}
-        onMouseUp={stopDrag}
-        onMouseLeave={stopDrag}
+        className="flex space-x-5 overflow-x-auto py-5"
+        onMouseDown={(e) => {
+          setIsDown(true)
+          setStartX(e.pageX - ref.current.offsetLeft)
+          setScrollLeft(ref.current.scrollLeft)
+        }}
+        onMouseMove={(e) => {
+          if (!isDown) return
+          ref.current.scrollLeft =
+            scrollLeft - (e.pageX - startX) * 1.5
+        }}
+        onMouseUp={() => setIsDown(false)}
+        onMouseLeave={() => setIsDown(false)}
       >
         {children}
       </div>
@@ -84,3 +70,5 @@ function MoreBox({target}){
        </div>
     )
 }
+
+export {ProductWrapper, ProductBox, MoreBox}
