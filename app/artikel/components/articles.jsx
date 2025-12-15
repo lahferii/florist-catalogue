@@ -47,7 +47,7 @@ function Article({path, title, excerpt, date, slug}){
                         .split(" ")
                         .map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")}
                 </h2>
-                <p className="md:hidden tracking-wide leading-relaxed mb-5">
+                <p className="hidden md:block tracking-wide leading-relaxed mb-5">
                     {
                         excerpt.split(" ").slice(0, 10).join(" ")
                     }
