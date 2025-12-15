@@ -34,7 +34,7 @@ function WhatsappRedirect(title, price){
 
   window.open(
     `https://wa.me/${phone}?text=${encodedMessage}`,
-    "_blank"
+"_blank"
   );
 }
 
