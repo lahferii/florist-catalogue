@@ -64,9 +64,14 @@ function MoreBox({target}){
     return(
         <div className="w-72 h-96 flex-shrink-0 rounded overflow-hidden snap-center flex border-2 border-rose-500 p-1">
             <article className="w-full h-full bg-rose-500 m-auto flex">
-                    <div className="m-auto">
-                        <Link href={"/katalog"} className="btn-secondary text-rose-500">Lihat Selengkapnya</Link>
-                    </div>
+                <div className="m-auto">
+                  <Link
+                    href={`/katalog?category=${target}`}
+                    className="btn-secondary text-rose-500"
+                  >
+                    Lihat Selengkapnya
+                  </Link>
+                </div>
             </article>
        </div>
     )

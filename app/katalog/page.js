@@ -1,16 +1,21 @@
-'use client'
+"use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Wrapper, Product } from "./components/products";
 
-export default function Katalog() {
-  const [selectedCategory, setSelectedCategory] = useState("");
+export default function KatalogClient() {
+  const searchParams = useSearchParams();
+  const categoryFromQuery = searchParams.get("category") || "";
+
+  const [selectedCategory, setSelectedCategory] = useState(categoryFromQuery);
 
   const products = [
     { title: "Buket Uang 1", category: "Buket Uang", price: "100.000" },
-    { title: "Bunga Mawar", category: "Buket Bunga", price: "150.000" },
-    { title: "Coklat Box", category: "Coklat", price: "75.000" },
     { title: "Buket Uang 2", category: "Buket Uang", price: "200.000" },
+    { title: "Fresh Flower 1", category: "Fresh Flower", price: "150.000" },
+    { title: "Fresh Flower 2", category: "Fresh Flower", price: "75.000" },
+    { title: "Fresh Flower 3", category: "Fresh Flower", price: "200.000" },
   ];
 
   const filteredProducts = selectedCategory
@@ -29,15 +34,14 @@ export default function Katalog() {
         >
           <option value="">Semua Kategori</option>
           <option value="Buket Uang">Buket Uang</option>
-          <option value="Buket Bunga">Buket Bunga</option>
-          <option value="Coklat">Coklat</option>
+          <option value="Fresh Flower">Fresh Flower</option>
         </select>
       </article>
 
       <Wrapper>
-        {filteredProducts.map((product, index) => (
+        {filteredProducts.map((product) => (
           <Product
-            key={index}
+            key={product.title}
             title={product.title}
             category={product.category}
             price={product.price}

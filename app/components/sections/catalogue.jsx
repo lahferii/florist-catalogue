@@ -8,16 +8,16 @@ export default function Catalogue(){
                 <ProductBox title="Nominal 100rb" price="64738"/>
                 <ProductBox title="Nominal 200rb" price="64738"/>
                 <ProductBox title="owidhjsc" price="64738"/>
-                <MoreBox/>
+                <MoreBox target="Buket Uang"/>
             </ProductWrapper>
             
             
-            <ProductWrapper title="Category 2">
+            <ProductWrapper title="Fresh Flower">
                 <ProductBox/>
                 <ProductBox/>
                 <ProductBox/>
                 <ProductBox/>
-                <MoreBox/>
+                <MoreBox target="Fresh Flower"/>
             </ProductWrapper>
         </section>
     )
