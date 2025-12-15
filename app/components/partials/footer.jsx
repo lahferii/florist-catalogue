@@ -6,9 +6,8 @@ export default function Footer(){
             <article className="flex flex-col text-center md:text-left md:flex-row md:justify-between gap-x-10 mb-10">
                 <FooterListWrapper title="Tautan">
                     <FooterList list="Beranda"/>
-                    <FooterList list="Profil"/>
-                    <FooterList list="Kontak"/>
-                    <FooterList list="Shopee"/>
+                    <FooterList list="Artikel"/>
+                    <FooterList list="Katalog"/>
                 </FooterListWrapper>
 
                 <FooterListWrapper title="Sosial Media">
@@ -20,8 +19,6 @@ export default function Footer(){
                 <FooterListWrapper title="Produk Kami">
                     <FooterList list="Buket Uang"/>
                     <FooterList list="Fresh Flower"/>
-                    <FooterList list="ABCDEFG"/>
-                    <FooterList list="ABCDEFG"/>
                 </FooterListWrapper>
                 
                 <FooterListWrapper title="Alamat">
