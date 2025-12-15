@@ -44,12 +44,12 @@ function ProductWrapper({ title, children }) {
 
 function ProductBox({path, title, price}){
     return(
-        <div className="w-72 h-96 flex-shrink-0 flex flex-col rounded overflow-hidden shadow-md">
-            <article className="flex-[2] bg-black">
+        <div className="w-full md:w-72 h-96 flex-shrink-0 flex flex-col rounded overflow-hidden shadow-md relative">
+            <article className="w-full h-full">
 
             </article>
-
-            <article className="flex-1 relative flex flex-col px-2 bg-white">
+            
+            <article className="absolute w-full h-full flex flex-col px-5 bg-gradient-to-b from-transparent via-transparent to-pink-100">
                 <div className="absolute bottom-5">
                     <h3 className="tracking-widest font-semibold">{title}</h3>
                     <p className="mb-5 text-sm text-gray-700">Rp. {price}</p>

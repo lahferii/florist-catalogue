@@ -31,4 +31,19 @@
     .nav-link{
         @apply tracking-wider hover:text-rose-500 duration-300
     }
+    .rs__control {
+        @apply border-none shadow-none bg-transparent
+    }
+
+    .rs__menu {
+        @apply z-50
+    }
+
+    .rs__option {
+        font-size: 0.875rem;
+    }
+
+    .rs__single-value {
+        letter-spacing: 0.05em;
+    }
 }

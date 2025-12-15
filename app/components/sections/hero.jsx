@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import myIcon from '@/public/assets/hero.png';
+import Link from 'next/link';
 
 export default function Hero(){
     return(
@@ -17,8 +18,8 @@ export default function Hero(){
                 </div>
 
                 <ul className="flex space-x-5 items-center justify-center">
-                    <button className="btn-primary md:py-2">Hubungi Kami</button>
-                    <button className="btn-secondary md:py-2">Katalog</button>
+                    <Link href="/" className="btn-primary md:py-2">Hubungi Kami</Link>
+                    <Link href="/katalog" className="btn-secondary md:py-2">Katalog</Link>
                 </ul>
             </article>
 

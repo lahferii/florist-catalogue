@@ -3,7 +3,7 @@ import { FooterListWrapper, FooterList } from "../utils/footerList"
 export default function Footer(){
     return(
         <footer className="w-full pb-20 bg-gradient-to-b from-white  to-rose-100 px-5 md:px-16">
-            <article className="flex flex-col text-center md:text-left md:flex-row md:justify-between gap-x-10 mb-10">
+            <article className="flex flex-col md:text-left md:flex-row md:justify-between gap-x-10 mb-5">
                 <FooterListWrapper title="Tautan">
                     <FooterList list="Beranda"/>
                     <FooterList list="Artikel"/>
@@ -22,12 +22,12 @@ export default function Footer(){
                 </FooterListWrapper>
                 
                 <FooterListWrapper title="Alamat">
-                    <FooterList list="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa distinctio soluta pariatur unde esse obcaecati. Labore rem soluta consequuntur"/>
+                    <FooterList list="Jalan Raya ITS, Keputih, Sukolilo, Surabaya, Jawa Timur"/>
                 </FooterListWrapper>
             </article>
 
             <article className="w-full">
-                <h2 className="text-3xl tracking-wider mb-5 text-center md:text-left">Temukan Kami!</h2>
+                <h2 className="text-xl tracking-wider mb-5">Temukan Kami!</h2>
 
                 <div className="w-full h-96">
                     <iframe 

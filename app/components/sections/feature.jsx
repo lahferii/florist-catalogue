@@ -118,7 +118,7 @@ export default function Feature() {
             <p>Kami berkomitmen memberikan pelayanan terbaik dengan kualitas premium</p>
         </article>
 
-        <section className="flex flex-col md:flex-row flex-wrap justify-center">
+        <section className="flex flex-col md:flex-row flex-wrap justify-center md:overflow-hidden lg:overflow-visible">
             <BoxFeatures
                 ref={card1}
                 boxTitle="Kualitas Terbaik"
