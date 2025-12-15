@@ -75,7 +75,7 @@ function ProductBox({path, title, price}){
 
 function MoreBox({target}){
     return(
-        <div className="w-80 h-96 flex-shrink-0 rounded overflow-hidden snap-center flex border-2 border-rose-500 p-1">
+        <div className="w-72 h-96 flex-shrink-0 rounded overflow-hidden snap-center flex border-2 border-rose-500 p-1">
             <article className="w-full h-full bg-rose-500 m-auto flex">
                     <div className="m-auto">
                         <button className="btn-secondary text-rose-500">Lihat Selengkapnya</button>
