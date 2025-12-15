@@ -17,8 +17,8 @@ export default function Hero(){
                 </div>
 
                 <ul className="flex space-x-5 items-center justify-center">
-                    <button className="btn-primary md:py-2">Contact Us</button>
-                    <button className="btn-secondary md:py-2">Catalogue</button>
+                    <button className="btn-primary md:py-2">Hubungi Kami</button>
+                    <button className="btn-secondary md:py-2">Katalog</button>
                 </ul>
             </article>
 

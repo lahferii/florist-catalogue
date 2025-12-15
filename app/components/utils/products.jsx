@@ -1,4 +1,4 @@
-export {ProductWrapper, ProductBox}
+export {ProductWrapper, ProductBox, MoreBox}
 
 function ProductWrapper({title, children}){
     return(
@@ -7,13 +7,9 @@ function ProductWrapper({title, children}){
                 <div>
                     <h2 className="text-2xl tracking-wider">{title}</h2>
                 </div>
-
-                <div>
-                    <button className="btn-primary">Selengkapnya</button>
-                </div>
             </div>
 
-        <div className="w-full flex space-x-5 overflow-x-auto py-5 snap-x snap-mandatory">
+        <div className="w-full flex space-x-5 overflow-x-auto py-5 snap-x">
             {children}
         </div>
         </section>
@@ -22,7 +18,7 @@ function ProductWrapper({title, children}){
 
 function ProductBox({path, title, price}){
     return(
-        <div className="w-80 h-96 flex-shrink-0 flex flex-col rounded overflow-hidden snap-center">
+        <div className="w-80 h-96 flex-shrink-0 flex flex-col rounded overflow-hidden snap-center shadow-md">
             <article className="flex-[2] bg-black">
 
             </article>
@@ -35,5 +31,17 @@ function ProductBox({path, title, price}){
                 </div>
             </article>
         </div>
+    )
+}
+
+function MoreBox({target}){
+    return(
+        <div className="w-80 h-96 flex-shrink-0 rounded overflow-hidden snap-center flex border-2 border-rose-500 p-1">
+            <article className="w-full h-full bg-rose-500 m-auto flex">
+                    <div className="m-auto">
+                        <button className="btn-secondary text-rose-500">Lihat Selengkapnya</button>
+                    </div>
+            </article>
+       </div>
     )
 }

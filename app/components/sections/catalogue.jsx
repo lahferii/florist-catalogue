@@ -1,4 +1,4 @@
-import { ProductWrapper, ProductBox } from "../utils/products"
+import { ProductWrapper, ProductBox, MoreBox} from "../utils/products"
 
 export default function Catalogue(){
     return(
@@ -8,7 +8,7 @@ export default function Catalogue(){
                 <ProductBox title="Nominal 100rb" price="64738"/>
                 <ProductBox title="Nominal 200rb" price="64738"/>
                 <ProductBox title="owidhjsc" price="64738"/>
-                <ProductBox title="owidhjsc" price="64738"/>
+                <MoreBox/>
             </ProductWrapper>
             
             
@@ -16,6 +16,7 @@ export default function Catalogue(){
                 <ProductBox/>
                 <ProductBox/>
                 <ProductBox/>
+                <MoreBox/>
             </ProductWrapper>
         </section>
     )

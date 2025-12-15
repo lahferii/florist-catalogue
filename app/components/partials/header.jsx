@@ -70,8 +70,8 @@ export default function Header() {
 
       <nav ref={menuRef} className="hidden sm:flex menu">
         <Link className="nav-link" href="/">Beranda</Link>
-        <Link className="nav-link" href="/">Profil</Link>
-        <Link className="nav-link sm:btn-primary hover:text-white" href="/">Contact</Link>
+        <Link className="nav-link" href="/">Artikel</Link>
+        <Link className="nav-link sm:btn-primary hover:text-white" href="/">Hubungi Kami</Link>
 
         {/* <button
           onClick={toggleDark}
