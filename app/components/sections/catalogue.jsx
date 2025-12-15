@@ -16,6 +16,7 @@ export default function Catalogue(){
                 <ProductBox/>
                 <ProductBox/>
                 <ProductBox/>
+                <ProductBox/>
                 <MoreBox/>
             </ProductWrapper>
         </section>

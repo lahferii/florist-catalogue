@@ -1,24 +1,63 @@
-export {ProductWrapper, ProductBox, MoreBox}
+'use client'
 
-function ProductWrapper({title, children}){
-    return(
-        <section className="mb-10">
-            <div className="mb-2 flex justify-between">
-                <div>
-                    <h2 className="text-2xl tracking-wider">{title}</h2>
-                </div>
-            </div>
+import { useRef, useState, useEffect } from 'react'
 
-        <div className="w-full flex space-x-5 overflow-x-auto py-5 snap-x">
-            {children}
-        </div>
-        </section>
-    )
+export { ProductWrapper, ProductBox, MoreBox }
+
+function ProductWrapper({ title, children }) {
+  const ref = useRef(null)
+  const [isDown, setIsDown] = useState(false)
+  const [startX, setStartX] = useState(0)
+  const [scrollLeft, setScrollLeft] = useState(0)
+  const [isDesktop, setIsDesktop] = useState(false)
+
+  useEffect(() => {
+    setIsDesktop(window.matchMedia('(pointer: fine)').matches)
+  }, [])
+
+  const onMouseDown = (e) => {
+    if (!isDesktop || !ref.current) return
+    setIsDown(true)
+    setStartX(e.pageX - ref.current.offsetLeft)
+    setScrollLeft(ref.current.scrollLeft)
+  }
+
+  const onMouseMove = (e) => {
+    if (!isDown || !ref.current) return
+    e.preventDefault()
+    const x = e.pageX - ref.current.offsetLeft
+    ref.current.scrollLeft = scrollLeft - (x - startX) * 1.5
+  }
+
+  const stopDrag = () => setIsDown(false)
+
+  return (
+    <section className="mb-10">
+      <div className="mb-2 flex justify-between">
+        <h2 className="text-2xl tracking-wider">{title}</h2>
+      </div>
+
+      <div
+        ref={ref}
+        className="
+          w-full flex space-x-5 py-5
+          overflow-x-auto select-none
+          cursor-grab active:cursor-grabbing
+        "
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={stopDrag}
+        onMouseLeave={stopDrag}
+      >
+        {children}
+      </div>
+    </section>
+  )
 }
 
 function ProductBox({path, title, price}){
     return(
-        <div className="w-80 h-96 flex-shrink-0 flex flex-col rounded overflow-hidden snap-start shadow-md">
+        <div className="w-72 h-96 flex-shrink-0 flex flex-col rounded overflow-hidden shadow-md">
             <article className="flex-[2] bg-black">
 
             </article>
