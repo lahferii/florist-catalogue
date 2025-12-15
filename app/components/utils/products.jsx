@@ -18,7 +18,7 @@ function ProductWrapper({title, children}){
 
 function ProductBox({path, title, price}){
     return(
-        <div className="w-80 h-96 flex-shrink-0 flex flex-col rounded overflow-hidden snap-center shadow-md">
+        <div className="w-80 h-96 flex-shrink-0 flex flex-col rounded overflow-hidden snap-start shadow-md">
             <article className="flex-[2] bg-black">
 
             </article>
