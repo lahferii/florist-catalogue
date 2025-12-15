@@ -95,8 +95,8 @@ export default function Header() {
         <Link className="nav-link" href="/">
           Beranda
         </Link>
-        <Link className="nav-link" href="/artikel">
-          Artikel
+        <Link className="nav-link" href="/blog">
+          Blog
         </Link>
         <Link className="nav-link" href="/katalog">
           Katalog
