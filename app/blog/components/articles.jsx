@@ -1,45 +1,35 @@
 function ArticleWrapper({children}){
     return(
         <section className="w-full flex flex-col lg:flex-row gap-10">
-            <div className="flex-[2]">
+            <div className="lg:w-3/4 xl:max-w-3xl">
                 {children}
             </div>
             <div className="flex-1">
-                <div className="sticky top-24">
-                    <article className="mb-5">
+                <div className="lg:sticky lg:top-24">
+                    <article className="mb-10">
                         <h2 className=" text-xl tracking-wider mb-2">Artikel Terbaru</h2>
 
-                        <ul className="flex flex-wrap gap-2">
-                            <li className="hover:shadow-lg hover:-translate-y-1 cursor-pointerw duration-300 w-full border-2 border-rose-500 flex-shrink-0 py-2 px-2 inline-block">
+                        <ul className="">
+                            <li className="cursor-pointer duration-300 mb-2">
                                 Cara Membuat Ketupat Lembu
                             </li>
-                            <li className="hover:shadow-lg hover:-translate-y-1 cursor-pointer duration-300 w-full border-2 border-rose-500 flex-shrink-0 py-2 px-2 inline-block">
+                            <li className="cursor-pointer duration-300 mb-2">
                                 Cara Membuat Ayam Goreng Crispy Meskipun Tidak Punya Ayam Dan Kompor
                             </li>
-                            <li className="hover:shadow-lg hover:-translate-y-1 cursor-pointer duration-300 w-full border-2 border-rose-500 flex-shrink-0 py-2 px-2 inline-block">
+                            <li className="cursor-pointer duration-300 mb-2">
                                 Mencari Makna Hidup Melalui Permainan Online Mobile Legends Bang-bang
                             </li>
                         </ul>
                     </article>
 
-                    <article className="mb-5">
-                        <h2 className=" text-xl tracking-wider mb-2">Tahun</h2>
-
-                        <ul className="flex flex-wrap gap-2">
-                            <li className="hover:shadow-lg hover:-translate-y-1 cursor-pointer duration-300 border-2 border-rose-500 flex-shrink-0 py-1 px-2 inline-block">2025</li>
-                            <li className="hover:shadow-lg hover:-translate-y-1 cursor-pointer duration-300 border-2 border-rose-500 flex-shrink-0 py-1 px-2 inline-block">2024</li>
-                            <li className="hover:shadow-lg hover:-translate-y-1 cursor-pointer duration-300 border-2 border-rose-500 flex-shrink-0 py-1 px-2 inline-block">2023</li>
-                            <li className="hover:shadow-lg hover:-translate-y-1 cursor-pointer duration-300 border-2 border-rose-500 flex-shrink-0 py-1 px-2 inline-block">2022</li>
-                        </ul>
-                    </article>
 
                     <article className="mb-5">
                         <h2 className=" text-xl tracking-wider mb-2">Kategori</h2>
 
-                        <ul className="flex flex-wrap gap-2">
-                            <li className="hover:shadow-lg hover:-translate-y-1 cursor-pointer duration-300 border-2 border-rose-500 flex-shrink-0 py-1 px-2 inline-block">Trivia</li>
-                            <li className="hover:shadow-lg hover:-translate-y-1 cursor-pointer duration-300 border-2 border-rose-500 flex-shrink-0 py-1 px-2 inline-block">Kesehatan</li>
-                            <li className="hover:shadow-lg hover:-translate-y-1 cursor-pointer duration-300 border-2 border-rose-500 flex-shrink-0 py-1 px-2 inline-block">Sejarah</li>
+                        <ul className="">
+                            <li className="cursor-pointer duration-300 mb-2">Trivia</li>
+                            <li className="cursor-pointer duration-300 mb-2">Kesehatan</li>
+                            <li className="cursor-pointer duration-300 mb-2">Sejarah</li>
                         </ul>
                     </article>
                 </div>
@@ -48,20 +38,26 @@ function ArticleWrapper({children}){
     )
 }
 
-function Article({title, date, excerpt, slug}){
+function Article({path, title, excerpt, date, slug}){
     return(
-        <div className="py-5 border-b-2 border-rose-500 mb-5">
-            <article>
-                <h2 className="text-2xl tracking-wider mb-2">
+        <div className="mb-10 flex justify-between">
+            <article className="md:w-2/3 pr-5">
+                <h2 className="text-xl md:text-2xl tracking-wider mb-2">
                     {title
                         .split(" ")
                         .map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")}
                 </h2>
-                <p className="mb-5 tracking-wider leading-relaxed">
-                    {excerpt}
+                <p className="tracking-wide leading-relaxed mb-5">
+                    {
+                        excerpt.split(" ").slice(0, 10).join(" ")
+                    }
                 </p>
+
                 <span className="tracking-wider text-sm text-gray-700">{date}</span>
             </article>
+
+            <div className="w-24 h-24 md:w-44 md:h-44 bg-black flex-shrink-0"></div>
+
         </div>
     )
 }

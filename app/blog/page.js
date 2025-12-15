@@ -43,7 +43,7 @@ export default function Artikel() {
   return (
     <section className="pt-24 px-5 md:px-16 mb-10 relative">
       <article className="mb-5">
-        <h2 className=" text-2xl tracking-wider">Blog</h2>
+        <h2 className=" text-2xl tracking-wider">Artikel</h2>
       </article>
 
       <ArticleWrapper>
