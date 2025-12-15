@@ -9,8 +9,8 @@ export default function Home() {
             <Hero/>
 
             <div className="max-w-7xl mx-auto px-5 relative">
-                <Catalogue/>
                 <Feature/>
+                <Catalogue/>
                 <Contact/>
             </div>
         </main>

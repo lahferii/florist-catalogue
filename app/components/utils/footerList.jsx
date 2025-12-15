@@ -1,12 +1,9 @@
 import Link from "next/link"
 
-function FooterListWrapper({title, caption, children}){
+function FooterListWrapper({title, children}){
     return(
-        <div className={"mb-2 md:w-72"}>
-            <h3 className="text-xl tracking-wide mb-2">{title}</h3>
-            <p>
-                {caption}
-            </p>
+        <div className={"mb-5"}>
+            <h3 className="text-xl tracking-wide mb-1">{title}</h3>
             <ul>
                 {children}
             </ul>
@@ -16,7 +13,7 @@ function FooterListWrapper({title, caption, children}){
 
 function FooterList({list}){
     return(
-        <li>
+        <li className="md:max-w-56">
             <Link href="/">{list}</Link>
         </li>
     )

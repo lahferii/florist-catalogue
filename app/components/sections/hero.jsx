@@ -25,6 +25,7 @@ export default function Hero(){
             <article>
                 <Image className='w-[700px] md:w-96 mx-auto' src={myIcon} alt="Hero Image"/>
             </article>
+
         </section>
     );
 }

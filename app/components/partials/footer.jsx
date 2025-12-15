@@ -3,33 +3,34 @@ import { FooterListWrapper, FooterList } from "../utils/footerList"
 export default function Footer(){
     return(
         <footer className="w-full pb-20 bg-gradient-to-b from-white  to-rose-100 px-5 md:px-16">
-            <article className="flex flex-col text-center md:text-left md:flex-row md:justify-between mb-5 gap-10">
-                <FooterListWrapper title="Lorem Florist" caption="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure qui doloribus consequuntur porro adipisci sed voluptatum nam iste, officiis non?"/>
+            <article className="flex flex-col text-center md:text-left md:flex-row md:justify-between gap-x-10 mb-10">
+                <FooterListWrapper title="Tautan">
+                    <FooterList list="Beranda"/>
+                    <FooterList list="Profil"/>
+                    <FooterList list="Kontak"/>
+                    <FooterList list="Shopee"/>
+                </FooterListWrapper>
 
                 <FooterListWrapper title="Sosial Media">
-                    <FooterList list="ABCDEFG"/>
-                    <FooterList list="ABCDEFG"/>
-                    <FooterList list="ABCDEFG"/>
-                    <FooterList list="ABCDEFG"/>
+                    <FooterList list="Instagram"/>
+                    <FooterList list="Whatsapp"/>
+                    <FooterList list="Tiktok"/>
                 </FooterListWrapper>
 
                 <FooterListWrapper title="Produk Kami">
-                    <FooterList list="ABCDEFG"/>
-                    <FooterList list="ABCDEFG"/>
+                    <FooterList list="Buket Uang"/>
+                    <FooterList list="Fresh Flower"/>
                     <FooterList list="ABCDEFG"/>
                     <FooterList list="ABCDEFG"/>
                 </FooterListWrapper>
-
+                
                 <FooterListWrapper title="Alamat">
-                    <FooterList list="ABCDEFG"/>
-                    <FooterList list="ABCDEFG"/>
-                    <FooterList list="ABCDEFG"/>
-                    <FooterList list="ABCDEFG"/>
+                    <FooterList list="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa distinctio soluta pariatur unde esse obcaecati. Labore rem soluta consequuntur"/>
                 </FooterListWrapper>
             </article>
 
             <article className="w-full">
-                <h2 className="text-3xl tracking-wider mb-5">Temukan Kami!</h2>
+                <h2 className="text-3xl tracking-wider mb-5 text-center md:text-left">Temukan Kami!</h2>
 
                 <div className="w-full h-96">
                     <iframe 

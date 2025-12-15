@@ -13,7 +13,7 @@ function ProductWrapper({title, children}){
                 </div>
             </div>
 
-        <div className="w-full flex space-x-5 overflow-x-auto py-5">
+        <div className="w-full flex space-x-5 overflow-x-auto py-5 snap-x snap-mandatory">
             {children}
         </div>
         </section>
@@ -22,12 +22,12 @@ function ProductWrapper({title, children}){
 
 function ProductBox({path, title, price}){
     return(
-        <div className="w-80 h-96 flex-shrink-0 shadow flex flex-col rounded overflow-hidden">
+        <div className="w-80 h-96 flex-shrink-0 flex flex-col rounded overflow-hidden snap-center">
             <article className="flex-[2] bg-black">
 
             </article>
 
-            <article className="flex-1 relative flex flex-col px-2 bg-gradient-to-br from-white to-rose-50">
+            <article className="flex-1 relative flex flex-col px-2 bg-white">
                 <div className="absolute bottom-5">
                     <h3 className="tracking-widest font-semibold">{title}</h3>
                     <p className="mb-5 text-sm text-gray-700">Rp. {price}</p>
