@@ -42,12 +42,12 @@ function Article({path, title, excerpt, date, slug}){
     return(
         <div className="mb-10 flex justify-between group cursor-pointer">
             <article className="md:w-2/3 pr-5">
-                <h2 className="text-xl md:text-2xl tracking-wider mb-2 group-hover:text-rose-500 duration-300">
+                <h2 className="md:text-2xl tracking-wider mb-2 group-hover:text-rose-500 duration-300">
                     {title
                         .split(" ")
                         .map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")}
                 </h2>
-                <p className="tracking-wide leading-relaxed mb-5">
+                <p className="md:hidden tracking-wide leading-relaxed mb-5">
                     {
                         excerpt.split(" ").slice(0, 10).join(" ")
                     }
