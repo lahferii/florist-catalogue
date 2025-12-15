@@ -10,13 +10,13 @@ function ArticleWrapper({children}){
                         <h2 className=" text-xl tracking-wider mb-2">Artikel Terbaru</h2>
 
                         <ul className="">
-                            <li className="cursor-pointer duration-300 mb-2">
+                            <li className="hover:text-rose-500 cursor-pointer duration-300 mb-2">
                                 Cara Membuat Ketupat Lembu
                             </li>
-                            <li className="cursor-pointer duration-300 mb-2">
+                            <li className="hover:text-rose-500 cursor-pointer duration-300 mb-2">
                                 Cara Membuat Ayam Goreng Crispy Meskipun Tidak Punya Ayam Dan Kompor
                             </li>
-                            <li className="cursor-pointer duration-300 mb-2">
+                            <li className="hover:text-rose-500 cursor-pointer duration-300 mb-2">
                                 Mencari Makna Hidup Melalui Permainan Online Mobile Legends Bang-bang
                             </li>
                         </ul>
@@ -27,9 +27,9 @@ function ArticleWrapper({children}){
                         <h2 className=" text-xl tracking-wider mb-2">Kategori</h2>
 
                         <ul className="">
-                            <li className="cursor-pointer duration-300 mb-2">Trivia</li>
-                            <li className="cursor-pointer duration-300 mb-2">Kesehatan</li>
-                            <li className="cursor-pointer duration-300 mb-2">Sejarah</li>
+                            <li className="hover:text-rose-500 cursor-pointer duration-300 mb-2">Trivia</li>
+                            <li className="hover:text-rose-500 cursor-pointer duration-300 mb-2">Kesehatan</li>
+                            <li className="hover:text-rose-500 cursor-pointer duration-300 mb-2">Sejarah</li>
                         </ul>
                     </article>
                 </div>
@@ -40,9 +40,9 @@ function ArticleWrapper({children}){
 
 function Article({path, title, excerpt, date, slug}){
     return(
-        <div className="mb-10 flex justify-between">
+        <div className="mb-10 flex justify-between group cursor-pointer">
             <article className="md:w-2/3 pr-5">
-                <h2 className="text-xl md:text-2xl tracking-wider mb-2">
+                <h2 className="text-xl md:text-2xl tracking-wider mb-2 group-hover:text-rose-500 duration-300">
                     {title
                         .split(" ")
                         .map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")}
