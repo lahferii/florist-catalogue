@@ -50,7 +50,7 @@ export default function KatalogClient() {
       <article className="mb-5 flex justify-between items-center gap-4">
         <h2 className="text-2xl tracking-wider">Katalog</h2>
 
-        <div className="w-56 text-sm">
+        <div className="w-40 text-sm">
           <Select
             instanceId="kategori-select"
             options={categoryOptions}
