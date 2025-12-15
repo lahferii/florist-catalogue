@@ -9,7 +9,7 @@ export default function Contact(){
 
                 <article className="flex flex-row gap-5 justify-center">
                     <div>
-                    <button className="btn-secondary border-2 border-rose-500 py-2">Hubungi Kami</button>
+                    <button className="btn-secondary border-2 border-rose-500 py-2 px-5">Hubungi Kami</button>
                     </div>
                     <div>
                     <button className="btn-secondary bg-rose-500 py-2 border-2 border-white text-white">Lihat Kami Di Shopee</button>
