@@ -6,37 +6,16 @@ import Link from "next/link";
 export default function Header() {
   const menuRef = useRef(null);
   const navbarRef = useRef(null);
+  const burgerRef = useRef(null);
+
+  const isBelowLg = () => window.innerWidth < 1024; // < lg
 
   const toggleMenu = () => {
-    const menu = menuRef.current;
-    if (!menu) return;
-
-    menu.classList.toggle("hidden");
-    menu.classList.toggle("sm:flex");
-    menu.classList.toggle("flex");
-  };
-
-  const toggleDark = () => {
-    const body = document.body.classList;
-    const isDark = localStorage.getItem("isDark");
-
-    if (isDark) {
-      localStorage.removeItem("isDark");
-      body.toggle("dark");
-      console.info("terang");
-    } else {
-      localStorage.setItem("isDark", "true");
-      body.toggle("dark");
-      console.info("gelap");
-    }
+    if (!isBelowLg()) return;
+    menuRef.current?.classList.toggle("hidden"); // ❌ HANYA toggle hidden
   };
 
   useEffect(() => {
-    const checkDarkMode = localStorage.getItem("isDark");
-    if (checkDarkMode) {
-      document.body.classList.add("dark");
-    }
-
     const handleScroll = () => {
       if (!navbarRef.current) return;
 
@@ -47,36 +26,87 @@ export default function Header() {
       }
     };
 
+    const handleClickOutside = (e) => {
+      if (!isBelowLg()) return;
+
+      if (!menuRef.current || !burgerRef.current) return;
+
+      const menu = menuRef.current;
+
+      const klikDiLuar =
+        !menu.contains(e.target) &&
+        !burgerRef.current.contains(e.target);
+
+      const menuTerbuka = !menu.classList.contains("hidden");
+
+      if (klikDiLuar && menuTerbuka) {
+        menu.classList.add("hidden");
+      }
+    };
+
+    const handleResize = () => {
+      if (!menuRef.current) return;
+
+      if (isBelowLg()) {
+        // mobile → pastikan menu default hidden
+        menuRef.current.classList.add("hidden");
+      } else {
+        // lg+ → pastikan menu tampil
+        menuRef.current.classList.remove("hidden");
+      }
+    };
+
+    // jalankan sekali saat mount
+    handleResize();
+
     window.addEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
     <header ref={navbarRef} className="nav-bar">
       <div>
-        <h3 className="md:text-xl tracking-wider">
-          Lorem Florist
-        </h3>
+        <Link href={"/"} className="lg:text-xl tracking-wider hover:text-rose-500 duration-300">Lorem Florist</Link>
       </div>
 
-      <button onClick={toggleMenu} className="burger group">
+      {/* Burger aktif < lg */}
+      <button
+        ref={burgerRef}
+        onClick={toggleMenu}
+        className="burger group lg:hidden"
+      >
         <div className="w-full h-2 bg-gray-700 group-hover:bg-rose-500 duration-300"></div>
         <div className="w-full h-2 bg-gray-700 group-hover:bg-rose-500 duration-300"></div>
         <div className="w-full h-2 bg-gray-700 group-hover:bg-rose-500 duration-300"></div>
       </button>
 
-      <nav ref={menuRef} className="hidden sm:flex menu">
-        <Link className="nav-link" href="/">Beranda</Link>
-        <Link className="nav-link" href="/">Artikel</Link>
-        <Link className="nav-link sm:btn-primary hover:text-white" href="/">Hubungi Kami</Link>
-
-        {/* <button
-          onClick={toggleDark}
-          className="far fa-lightbulb text-gray-500  text-xl w-8 h-8 rounded-full"
-        /> */}
+      {/* Menu */}
+      <nav
+        ref={menuRef}
+        className="menu hidden sm:flex lg:flex"
+      >
+        <Link className="nav-link" href="/">
+          Beranda
+        </Link>
+        <Link className="nav-link" href="/artikel">
+          Artikel
+        </Link>
+        <Link className="nav-link" href="/katalog">
+          Katalog
+        </Link>
+        <Link
+          className="nav-link sm:btn-primary hover:text-rose-500 sm:hover:text-white"
+          href="/"
+        >
+          Hubungi Kami
+        </Link>
       </nav>
     </header>
   );

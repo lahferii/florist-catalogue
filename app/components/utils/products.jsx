@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, useRef } from 'react'
+import Link from 'next/link'
 
 function ProductWrapper({ title, children }) {
   const ref = useRef(null)
@@ -64,7 +65,7 @@ function MoreBox({target}){
         <div className="w-72 h-96 flex-shrink-0 rounded overflow-hidden snap-center flex border-2 border-rose-500 p-1">
             <article className="w-full h-full bg-rose-500 m-auto flex">
                     <div className="m-auto">
-                        <button className="btn-secondary text-rose-500">Lihat Selengkapnya</button>
+                        <Link href={"/katalog"} className="btn-secondary text-rose-500">Lihat Selengkapnya</Link>
                     </div>
             </article>
        </div>

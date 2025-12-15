@@ -22,7 +22,7 @@ export default function Feature() {
                 scale: 0.6,
                 rotate: 14,
                 scrollTrigger: {
-                    scrub: 0.5,
+                    scrub: 1,
                     trigger: card1.current,
                     start: "top 30%",
                     toggleActions: "play none none reverse",
@@ -34,7 +34,7 @@ export default function Feature() {
                 scale: 0.6,
                 rotate: -14,
                 scrollTrigger: {
-                    scrub: 0.5,
+                    scrub: 1,
                     trigger: card3.current,
                     start: "top 20%",
                     toggleActions: "play none none reverse",
