@@ -114,27 +114,27 @@ export default function Feature() {
   return (
     <section className="mb-20">
         <article className="mb-5 text-center">
-            <h2 className="text-3xl tracking-wider mb-2">Kenapa Memilih Lorem Florist?</h2>
+            <h2 className="text-3xl tracking-wider mb-2">Kenapa Memilih Acas Florist?</h2>
             <p>Kami berkomitmen memberikan pelayanan terbaik dengan kualitas premium</p>
         </article>
 
         <section className="flex flex-col md:flex-row flex-wrap justify-center md:overflow-hidden lg:overflow-visible">
             <BoxFeatures
                 ref={card1}
-                boxTitle="Kualitas Terbaik"
-                boxDetail="Lorem ipsum dolor sit amet."
+                boxTitle="Harga Terjangkau"
+                boxDetail="Harga mulai dari Rp 10.000"
             />
 
             <BoxFeatures
                 ref={card2}
-                boxTitle="Kualitas Terbaik"
-                boxDetail="Lorem ipsum dolor sit amet."
+                boxTitle="Gratis Ongkir"
+                boxDetail="Untuk daerah surabaya"
             />
             
             <BoxFeatures
                 ref={card3}
                 boxTitle="Kualitas Terbaik"
-                boxDetail="Lorem ipsum dolor sit amet."
+                boxDetail="isi teks disini"
             />
         </section>
     </section>

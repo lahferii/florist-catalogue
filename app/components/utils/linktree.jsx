@@ -5,7 +5,7 @@ function LinkWrapper({ children }){
                 <div className="w-24 md:w-28 h-24 md:h-28 mb-2 rounded-full bg-rose-500 mx-auto"></div>
                 
                 <div className="text-center">
-                    <h1 className="text-xl tracking-wide mb-1">Lorem Florist</h1>
+                    <h1 className="text-xl tracking-wide mb-1">Acas Florist</h1>
                     <p className="tracking-wide text-sm md:w-2/3 mx-auto">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, perferendis.
                     </p>

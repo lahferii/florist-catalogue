@@ -8,11 +8,11 @@ export default function Header() {
   const navbarRef = useRef(null);
   const burgerRef = useRef(null);
 
-  const isBelowLg = () => window.innerWidth < 1024; // < lg
+  const isBelowLg = () => window.innerWidth < 1024;
 
   const toggleMenu = () => {
     if (!isBelowLg()) return;
-    menuRef.current?.classList.toggle("hidden"); // ❌ HANYA toggle hidden
+    menuRef.current?.classList.toggle("hidden");
   };
 
   useEffect(() => {
@@ -48,10 +48,8 @@ export default function Header() {
       if (!menuRef.current) return;
 
       if (isBelowLg()) {
-        // mobile → pastikan menu default hidden
         menuRef.current.classList.add("hidden");
       } else {
-        // lg+ → pastikan menu tampil
         menuRef.current.classList.remove("hidden");
       }
     };
@@ -73,10 +71,11 @@ export default function Header() {
   return (
     <header ref={navbarRef} className="nav-bar">
       <div>
-        <Link href={"/"} className="lg:text-xl tracking-wider hover:text-rose-500 duration-300">Lorem Florist</Link>
+        <Link href={"/"} className="lg:text-xl tracking-wider hover:text-rose-500 duration-300">
+          Acas Florist
+        </Link>
       </div>
 
-      {/* Burger aktif < lg */}
       <button
         ref={burgerRef}
         onClick={toggleMenu}
