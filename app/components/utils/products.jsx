@@ -14,15 +14,17 @@ function LatestProductWrapper({ title, children }) {
     setMounted(true)
   }, [])
 
-  if (!mounted) return null // ⬅️ SSR & first render sama
+  if (!mounted) return null
 
   return (
     <section className="mb-10 cursor-pointer">
-      <h2 className="text-2xl tracking-wider mb-2">{title}</h2>
+      <div className='lg:px-2 mb-2'>
+        <h2 className="text-2xl tracking-wider">{title}</h2>
+      </div>
 
       <div
         ref={ref}
-        className="flex space-x-5 overflow-x-auto py-5"
+        className="flex space-x-5 overflow-x-auto lg:px-2 py-5"
         onMouseDown={(e) => {
           setIsDown(true)
           setStartX(e.pageX - ref.current.offsetLeft)
@@ -126,16 +128,15 @@ function WhatsappRedirect(title, price, count) {
 
 function MoreBox({target}){
     return(
-        <div className="w-72 h-96 flex-shrink-0 rounded overflow-hidden snap-center flex border-2 border-rose-500 p-1">
-            <article className="w-full h-full bg-rose-500 m-auto flex">
-                <div className="m-auto">
+        <div className="w-72 h-96 flex-shrink-0 rounded overflow-hidden snap-center flex bg-gradient-to-b from-pink-100 via-transparent to-pink-100">
+            <article className="w-full h-full m-auto flex">
+                <button className="m-auto btn-primary">
                   <Link
                     href={`/katalog?category=${target}`}
-                    className="btn-secondary hover:-translate-y-2 text-rose-500"
                   >
                     Lihat Selengkapnya
                   </Link>
-                </div>
+                </button>
             </article>
        </div>
     )

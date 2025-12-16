@@ -1,4 +1,4 @@
-import { LinkWrapper, LinkItem } from "./components/linktree";
+import { LinkWrapper, LinkItem } from "../components/utils/linktree";
 
 export default function LinkTree() {
   return (

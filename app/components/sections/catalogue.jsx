@@ -8,6 +8,7 @@ export default function Catalogue(){
                 <ProductBox title="Nominal 10rb" price="100.000"/>
                 <ProductBox title="Nominal 50rb" price="250.000"/>
                 <ProductBox title="Nominal 100rb" price="500.000"/>
+                <ProductBox title="Nominal 200rb" price="1.000.000"/>
                 {/* <MoreBox target="Buket Uang"/> */}
             </LatestProductWrapper>
             
@@ -17,6 +18,7 @@ export default function Catalogue(){
                 <ProductBox title="Tulip" price="10.000"/>
                 <ProductBox title="Anggrek" price="10.000"/>
                 <ProductBox title="Mawar" price="13.000"/>
+                <ProductBox title="Daisy" price="15.000"/>
                 {/* <MoreBox target="Fresh Flower"/> */}
             </LatestProductWrapper>
         </section>
