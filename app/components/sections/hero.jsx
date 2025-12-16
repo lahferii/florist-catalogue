@@ -18,7 +18,7 @@ export default function Hero(){
                 </div>
 
                 <ul className="flex space-x-5 items-center justify-center">
-                    <Link href="https://wa.me/6283167944561" target='_blank' className="btn-primary md:py-2">Hubungi Kami</Link>
+                    <Link href="/kontak" className="btn-primary md:py-2">Hubungi Kami</Link>
                     <Link href="/katalog" className="btn-secondary md:py-2">Katalog</Link>
                 </ul>
             </article>

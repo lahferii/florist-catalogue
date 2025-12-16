@@ -1,7 +1,7 @@
 import Hero from "./components/sections/hero";
 import Feature from "./components/sections/feature";
 import Catalogue from "./components/sections/catalogue";
-import Contact from "./components/sections/contact";
+import Contact from "./components/sections/contactSection";
 
 export default function Home() {
     return(

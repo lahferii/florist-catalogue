@@ -103,8 +103,7 @@ export default function Header() {
         </Link>
         <Link
           className="nav-link sm:btn-primary hover:text-rose-500 sm:hover:text-white"
-          href={"https://wa.me/6283167944561"}
-          target="_blank"
+          href="/kontak"
         >
           Hubungi Kami
         </Link>
