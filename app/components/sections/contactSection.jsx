@@ -18,17 +18,17 @@ export default function Contact(){
                         <h2 className="text-2xl sm:text-3xl tracking-wider">Ingin Mengenal Kami Lebih Dekat?</h2>
                     </article>
 
-                    <article className=" flex flex-col sm:flex-row gap-5 justify-center">
-                        <div>
-                            <Link href="/kontak" className="btn-primary hover:-translate-y-56 sm:py-2 w-56">
+                    <article className="flex flex-col sm:flex-row gap-5 justify-center">
+                        <button className="btn-primary hover:-translate-y-1 sm:py-2 w-56 mx-auto">
+                            <Link href="/kontak">
                                 Hubungi Kami
                             </Link>
-                        </div>
-                        <div>
-                            <Link href="/" className="btn-secondary hover:-translate-y-56 sm:py-2 w-56">
+                        </button>
+                        <button className="btn-secondary hover:-translate-y-1 sm:py-2 w-56 mx-auto">
+                            <Link href="/">
                                 Lihat Kami Di Shopee
                             </Link>
-                        </div>
+                        </button>
                     </article>
                 </div>
             </div>

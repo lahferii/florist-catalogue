@@ -1,4 +1,4 @@
-import { ArticleWrapper, Article } from "./components/articles"
+import { ArticleWrapper, Article } from "../components/utils/articles"
 
 const articles = [
   {

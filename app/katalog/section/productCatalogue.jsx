@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import Select from "react-select";
-import { Wrapper, Product } from "../components/products";
+import { MainWrapper, ProductBox } from "@/app/components/utils/products";
 
 export default function KatalogClient() {
   const searchParams = useSearchParams();
@@ -11,16 +11,15 @@ export default function KatalogClient() {
 
   const products = useMemo(
     () => [
-      { title: "Buket Uang 1", category: "Buket Uang", price: "100.000" },
-      { title: "Buket Uang 2", category: "Buket Uang", price: "200.000" },
-      { title: "Fresh Flower 1", category: "Fresh Flower", price: "150.000" },
-      { title: "Fresh Flower 2", category: "Fresh Flower", price: "75.000" },
-      { title: "Fresh Flower 3", category: "Fresh Flower", price: "200.000" },
+      { title: "Buket Uang 1", category: "Buket Uang", price: "100" },
+      { title: "Buket Uang 2", category: "Buket Uang", price: "200" },
+      { title: "Fresh Flower 1", category: "Fresh Flower", price: "150" },
+      { title: "Fresh Flower 2", category: "Fresh Flower", price: "75" },
+      { title: "Fresh Flower 3", category: "Fresh Flower", price: "200" },
     ],
     []
   );
 
-  // Options untuk react-select
   const categoryOptions = useMemo(
     () => [
       { value: "", label: "Semua Kategori" },
@@ -30,10 +29,8 @@ export default function KatalogClient() {
     []
   );
 
-  // Selected option
   const [selectedOption, setSelectedOption] = useState(categoryOptions[0]);
 
-  // Sync query -> react-select
   useEffect(() => {
     const matched = categoryOptions.find(
       (opt) => opt.value === categoryFromQuery
@@ -75,15 +72,15 @@ export default function KatalogClient() {
         </div>
       </article>
 
-      <Wrapper>
+      <MainWrapper>
         {filteredProducts.map((product) => (
-          <Product
+          <ProductBox
             key={product.title}
             title={product.title}
             price={product.price}
           />
         ))}
-      </Wrapper>
+      </MainWrapper>
     </main>
   );
 }
