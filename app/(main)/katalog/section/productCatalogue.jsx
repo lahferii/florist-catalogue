@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import Select from "react-select";
-import { MainWrapper, ProductBox } from "@/app/components/utils/products";
+import { MainWrapper, ProductBox } from "@/app/(main)/components/utils/products";
 
 export default function KatalogClient() {
   const searchParams = useSearchParams();
