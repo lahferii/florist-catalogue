@@ -30,6 +30,10 @@ const data = {
         {
           title: "Kelola Produk",
           url: "/admin/produk",
+        },
+        {
+          title: "Kelola Kategori Produk",
+          url: "/admin/produk/kategori",
         }
       ],
     },
@@ -40,6 +44,14 @@ const data = {
         {
           title: "Kelola Artikel",
           url: "/admin/artikel",
+        },
+        {
+          title: "Kelola Draf Artikel",
+          url: "/admin/artikel/draf",
+        },
+        {
+          title: "Kelola Kategori Artikel",
+          url: "/admin/artikel/kategori",
         }
       ],
     },

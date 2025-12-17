@@ -8,9 +8,11 @@ import {
   flexRender,
 } from "@tanstack/react-table";
 
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./ui/table";
+import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "./ui/table";
 import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
+
+import { FormDialog, DeleteDialog } from "./modal";
 
 // Dummy data
 const data = Array.from({ length: 25 }, (_, i) => ({
@@ -34,6 +36,7 @@ const columns = [
     //   />
     // ),
   },
+  { accessorKey: "category", header: "Kategori" },
   {
     accessorKey: "price",
     header: "Harga",
@@ -42,7 +45,6 @@ const columns = [
         row.original.price
       ),
   },
-  { accessorKey: "stock", header: "Stok" },
   {
     accessorKey: "actions",
     header: "Aksi",
@@ -54,18 +56,24 @@ const columns = [
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuItem
-            className="font-semibold"
-            onClick={() => alert(`Edit ${row.original.name}`)}
+          <FormDialog
+            title={"Edit " + row.original.name}
+            description={"Ganti data"}
+            action={"Edit"}
+            oldName={row.original.name}
+            oldPrice={row.original.price}
+            oldCategory={"buket-uang"}
           >
-            Edit
-          </DropdownMenuItem>
-          <DropdownMenuItem
-            className="text-red-600 font-semibold"
-            onClick={() => alert(`Delete ${row.original.name}`)}
-          >
-            Delete
-          </DropdownMenuItem>
+            <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+              Edit
+            </DropdownMenuItem>
+          </FormDialog>
+
+          <DeleteDialog target={row.original.name}>
+            <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+              Delete
+            </DropdownMenuItem>
+          </DeleteDialog>
         </DropdownMenuContent>
       </DropdownMenu>
     ),
@@ -120,20 +128,37 @@ export function DataTable() {
             </TableRow>
           )}
         </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TableCell colSpan={columns.length}>
+              <div className="flex items-center justify-end space-x-2 px-2 py-4">
+                <Button
+                  size="sm"
+                  onClick={() => table.previousPage()}
+                  disabled={!table.getCanPreviousPage()}
+                >
+                  Previous
+                </Button>
+
+                <Button
+                  size="sm"
+                  onClick={() => table.nextPage()}
+                  disabled={!table.getCanNextPage()}
+                >
+                  Next
+                </Button>
+
+                <span className="ml-4 text-sm">
+                  Page {table.getState().pagination.pageIndex + 1} of{" "}
+                  {table.getPageCount()}
+                </span>
+              </div>
+            </TableCell>
+          </TableRow>
+        </TableFooter>
+
       </Table>
 
-      {/* Pagination Controls */}
-      <div className="flex items-center justify-end space-x-2 mt-4">
-        <Button size="sm" onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
-          Previous
-        </Button>
-        <Button size="sm" onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
-          Next
-        </Button>
-        <span className="ml-4 text-sm">
-          Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
-        </span>
-      </div>
     </div>
   );
 }
